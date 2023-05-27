@@ -20,4 +20,3 @@ Take home task for plotly!
 
 1. press cntrl/cmd + shift + c
 2. type 'plotly-extension:open-dialog'
-3. you can also use a button with the same functionality in the toolbar

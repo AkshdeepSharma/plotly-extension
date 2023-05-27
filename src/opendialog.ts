@@ -1,5 +1,4 @@
-import { ICommandPalette, ToolbarButton } from '@jupyterlab/apputils';
-import { showDialog, Dialog } from '@jupyterlab/apputils';
+import { ICommandPalette, showDialog, Dialog } from '@jupyterlab/apputils';
 import { JupyterFrontEnd } from '@jupyterlab/application';
 import { Widget } from '@lumino/widgets';
 
@@ -26,21 +25,13 @@ export function activate(app: JupyterFrontEnd, palette: ICommandPalette): void {
     }
   });
 
-  const plotlyButton = new ToolbarButton({
-    label: 'Plotly Dialog',
-    onClick: () => {
-      app.commands.execute('plotly-extension:open-dialog');
-    }
-  });
-
   palette.addItem({
     command: 'plotly-extension:open-dialog',
     category: 'Extensions'
   });
-  app.shell.add(plotlyButton, 'toolbar');
 }
 
-class InputWidget extends Widget {
+export class InputWidget extends Widget {
   private inputElement: HTMLInputElement;
 
   constructor() {
